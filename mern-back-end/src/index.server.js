@@ -7,7 +7,7 @@ env.config();
 
 app.get('/',(req,res,next)=>{
     res.status(200).json({
-        message:'Hello from the server';
+        message:'Hello from the server'
     })
 })
 
