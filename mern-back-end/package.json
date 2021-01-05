@@ -14,5 +14,10 @@
     "api"
   ],
   "author": "jeewantha",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-validator": "^6.9.2",
+    "mongoose": "^5.11.10"
+  }
 }
