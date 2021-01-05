@@ -6,7 +6,7 @@ const app = express();
 
 env.config();
 
-app.use(bodyParser);
+app.use(bodyParser());
 
 app.get('/',(req,res,next)=>{
     res.status(200).json({
