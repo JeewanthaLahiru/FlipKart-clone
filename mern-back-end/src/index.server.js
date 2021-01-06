@@ -7,6 +7,7 @@ const app = express();
 
 env.config();
 
+
 //mongodb+srv://root:<password>@cluster0.ldkdk.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority
 
 mongoose.connect(
@@ -18,8 +19,8 @@ mongoose.connect(
     ).then(()=>{
         console.log('Database connected');
     });
+app.use(bodyParser.json());
 
-app.use(bodyParser);
 
 app.get('/',(req,res,next)=>{
     res.status(200).json({
