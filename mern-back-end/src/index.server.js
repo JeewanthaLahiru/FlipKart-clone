@@ -15,7 +15,9 @@ mongoose.connect(
         useNewUrlParser: true, 
         useUnifiedTopology: true
     }
-    );
+    ).then(()=>{
+        console.log('Database connected');
+    });
 
 app.use(bodyParser);
 
