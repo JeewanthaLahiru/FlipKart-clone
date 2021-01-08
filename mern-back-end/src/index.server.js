@@ -24,7 +24,7 @@ mongoose.connect(
         console.log('Database connected');
     });
 app.use(bodyParser.json());
-app.use('api',userRoutes);
+app.use('/api',userRoutes);
 
 app.listen(process.env.PORT,()=>{
     console.log(`app is running on PORT ${process.env.PORT}`);
