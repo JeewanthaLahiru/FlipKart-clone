@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
     firstName:{
@@ -42,5 +43,7 @@ const userSchema = new mongoose.Schema({
     contactNumber:{type : String},
     profilePicture:{type : String}
 }, {timestamps : true});
+
+
 
 module.exports = mongoose.model('User',userSchema);
