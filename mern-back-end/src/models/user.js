@@ -44,6 +44,15 @@ const userSchema = new mongoose.Schema({
     profilePicture:{type : String}
 }, {timestamps : true});
 
+userSchema.virtual('password')
+.set(function(password){
+    this.hash_password = bcrypt.hashSync(password,10);
+});
 
+userSchema.methods = {
+    authenticate: function(password){
+        return bcrypt.compare(password, this.hash_password);
+    }
+}
 
 module.exports = mongoose.model('User',userSchema);
