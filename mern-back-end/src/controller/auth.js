@@ -61,3 +61,10 @@ exports.signin = (req,res)=>{
         }
     });
 }
+
+exports.requireSignin = (req, res, next) =>{
+    const token = req.headers.authorization;
+    console.log(token);
+    //now this can be call next function
+    next();
+}
