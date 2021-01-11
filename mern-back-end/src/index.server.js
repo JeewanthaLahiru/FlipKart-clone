@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 //routes
-const userRoutes = require('./routes/user');
+const authRoutes = require('./routes/auth');
+const adminRoutes = require('./routes/admin/auth');
 
 const app = express();
 
@@ -24,7 +25,8 @@ mongoose.connect(
         console.log('Database connected');
     });
 app.use(bodyParser.json());
-app.use('/api',userRoutes);
+app.use('/api',authRoutes);
+app.use('/api',adminRoutes);
 
 app.listen(process.env.PORT,()=>{
     console.log(`app is running on PORT ${process.env.PORT}`);
