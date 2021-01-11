@@ -7,8 +7,8 @@ router.post('/signup',signup);
 router.post('/signin',signin);
 
 //first requireSignin is called then req,res function is called because next() function
-router.post('/profile',requireSignin, (req, res)=>{
+/*router.post('/profile',requireSignin, (req, res)=>{
     res.status(200).json({user:'profile'})
-})
+})*/
 
 module.exports = router;
