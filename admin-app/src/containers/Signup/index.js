@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../../components/Layout';
 import { Container, Form, Button, Row, Col } from 'react-bootstrap';
+import Input from '../../components/UI/Input';
 
 /**
 * @author
@@ -17,10 +18,13 @@ const Signup = (props) => {
 
               <Row>
                 <Col md={6}>
-                  <Form.Group controlId="formBasicPassword">
-                    <Form.Label>First Name</Form.Label>
-                    <Form.Control type="text" placeholder="First Name" />
-                  </Form.Group>
+                  <Input 
+                    label="First Name"
+                    type="text"
+                    placeholder="Last Name"
+                    value=""
+                    onChange = {()=>{}}
+                  />
                 </Col>
                 <Col md={6}>
                   <Form.Group controlId="formBasicPassword">
