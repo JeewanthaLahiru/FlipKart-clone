@@ -21,31 +21,39 @@ const Signup = (props) => {
                   <Input 
                     label="First Name"
                     type="text"
-                    placeholder="Last Name"
+                    placeholder="First Name"
                     value=""
                     onChange = {()=>{}}
                   />
                 </Col>
                 <Col md={6}>
-                  <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Last Name</Form.Label>
-                    <Form.Control type="text" placeholder="Last Name" />
-                  </Form.Group>
+                <Input 
+                    label="Last Name"
+                    type="text"
+                    placeholder="Last Name"
+                    value=""
+                    onChange = {()=>{}}
+                  />
                 </Col>
               </Row>
 
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
-                <Form.Text className="text-muted">
-                  We'll never share your email with anyone else.
-                </Form.Text>
-              </Form.Group>
+              <Input 
+                    label="Email Address"
+                    type="email"
+                    placeholder="Enter email"
+                    errorMessage="We'll never share your emali with anyone else"
+                    value=""
+                    onChange = {()=>{}}
+              />
 
-              <Form.Group controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
-              </Form.Group>
+              <Input 
+                  label="Password"
+                  type="password"
+                  placeholder="Password"
+                  value=""
+                  onChange = {()=>{}}
+              />
+
               <Button variant="primary" type="submit">
                 Submit
               </Button>
