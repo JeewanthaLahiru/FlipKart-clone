@@ -6,10 +6,10 @@ const router = express.Router();
 
 router.post('/signup',[
     check('firstName')
-    .isEmpty()
+    .notEmpty()
     .withMessage('firstName is required'),
     check('lastName')
-    .isEmpty()
+    .notEmpty()
     .withMessage('lastName is required'),
     check('email')
     .isEmail()
