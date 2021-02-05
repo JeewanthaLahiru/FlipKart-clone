@@ -4,7 +4,7 @@ exports.validateSignupRequest = [
     check('firstName')
     .notEmpty()
     .withMessage('first name is required'),
-    check('lastname')
+    check('lastName')
     .notEmpty()
     .withMessage('last name is required'),
     check('email')
