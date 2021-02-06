@@ -1,12 +1,12 @@
 const express = require('express');
 const { requireSignin, adminMiddleware } = require('../common-middleware');
-//const { addCategory, getCategories } = require('../controller/category');
+const { createProduct } = require('../controller/product');
 const router = express.Router();
-//const Product = require('../models/product');
+const multer = require('multer');
+const upload = multer({dest:'uploads/'});
 
-router.post("/product/create",requireSignin,adminMiddleware,(req,res)=>{
-    res.status(200).json({message:"Hello"});
-});
+
+router.post("/product/create",requireSignin,adminMiddleware,upload.single('productPicture'),createProduct);
 //router.get("/product/getcategory",getCategories);
 
 module.exports = router;
