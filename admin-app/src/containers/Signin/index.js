@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../../components/Layout';
 import { Container, Form, Button, Row, Col } from 'react-bootstrap';
+import { login } from '../../actions';
+import { useDispatch } from 'react-redux';
+import Input from '../../components/UI/Input';
 
 /**
 * @author
@@ -8,24 +11,42 @@ import { Container, Form, Button, Row, Col } from 'react-bootstrap';
 **/
 
 const Signin = (props) => {
+
+  const [email, setEmail]  = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const dispatch = useDispatch();
+
+  const userLogin = ( e ) =>{
+    e.preventDefault();
+    const user = {
+      email, password
+    }
+
+    dispatch(login(user));
+  }
+
   return (
     <Layout>
       <Container>
         <Row style={{marginTop:'50px'}}>
           <Col md={{span:6, offset:3}}>
-            <Form>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
-                <Form.Text className="text-muted">
-                  We'll never share your email with anyone else.
-                </Form.Text>
-              </Form.Group>
-
-              <Form.Group controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
-              </Form.Group>
+            <Form onSubmit={userLogin}>
+              <Input
+                label="Email"
+                placeholder="Email"
+                value={email}
+                type="email"
+                onChange={(e)=>setEmail(e.target.value)}
+              />
+              <Input
+                label="Password"
+                placeholder="Password"
+                value={password}
+                type="password"
+                onChange={(e)=>setPassword(e.target.value)}
+              />
               <Button variant="primary" type="submit">
                 Submit
               </Button>
