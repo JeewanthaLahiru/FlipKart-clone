@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../../components/Layout';
 import { Container, Form, Button, Row, Col } from 'react-bootstrap';
 import { login } from '../../actions';
+import { useDispatch } from 'react-redux';
 
 /**
 * @author
@@ -10,6 +11,8 @@ import { login } from '../../actions';
 
 const Signin = (props) => {
 
+  const dispatch = useDispatch();
+
   const userLogin = ( e ) =>{
     e.preventDefault();
     const user = {
@@ -17,7 +20,7 @@ const Signin = (props) => {
       password:'123456'
     }
 
-    login(user);
+    dispatch(login(user));
   }
 
   return (
